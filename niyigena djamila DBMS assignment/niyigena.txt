@@ -1,0 +1,728 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 1676
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use ruhande;
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_ruhande |
++-------------------+
+| ngoma             |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from ngoma;
++------+---------+--------+--------+----------+----------+-----------+---------+-----------+-----------------------+
+| ID   | f_name  | l_name | gender | province | district | sector    | cell    | tel       | gmail                 |
++------+---------+--------+--------+----------+----------+-----------+---------+-----------+-----------------------+
+|    1 | uwimana | Aline  | female | west     | karongi  | Rubengera | Kamwiza | 782335468 | uwimanaline@gmail.com |
++------+---------+--------+--------+----------+----------+-----------+---------+-----------+-----------------------+
+1 row in set (0.00 sec)
+
+mysql> insert into Ngoma values('002','abizera','anita', 'female','west','rubavu','mwiza','rwera','0781783009','abizeranita@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+---------+--------+--------+----------+----------+-----------+---------+-----------+-----------------------+
+| ID   | f_name  | l_name | gender | province | district | sector    | cell    | tel       | gmail                 |
++------+---------+--------+--------+----------+----------+-----------+---------+-----------+-----------------------+
+|    1 | uwimana | Aline  | female | west     | karongi  | Rubengera | Kamwiza | 782335468 | uwimanaline@gmail.com |
+|    2 | abizera | anita  | female | west     | rubavu   | mwiza     | rwera   | 781783009 | abizeranita@gmail.com |
++------+---------+--------+--------+----------+----------+-----------+---------+-----------+-----------------------+
+2 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('003','niyigena','djamila','female','kigali','gasabo','ntora','musezero','0781683006','niyigenadjamila@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+----------+---------+--------+----------+----------+-----------+----------+-----------+---------------------------+
+| ID   | f_name   | l_name  | gender | province | district | sector    | cell     | tel       | gmail                     |
++------+----------+---------+--------+----------+----------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana  | Aline   | female | west     | karongi  | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera  | anita   | female | west     | rubavu   | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena | djamila | female | kigali   | gasabo   | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
++------+----------+---------+--------+----------+----------+-----------+----------+-----------+---------------------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('004','uwiragiye','female','sumaya','kigali','nyarugenge','musezero','rugari','0789999999','uwiragiyesumaya@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | female  | sumaya | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+4 rows in set (0.00 sec)
+
+mysql> update Ngoma set l_name='sumaya'where f_name='uwiragiye';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update Ngoma set gender='female' where l_name='sumaya';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from Ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('005','makombe','violete','northen','musanze','muhoza','gabiro','munini','0798929394','makombeviolette@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender  | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female  | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female  | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female  | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female  | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | northen | musanze  | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+5 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('005','makombe','violete','female','northen','musanze','muhoza','gabiro','0798929394','makombeviolette@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender  | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female  | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female  | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female  | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female  | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | northen | musanze  | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
+|    5 | makombe   | violete | female  | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com |
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+6 rows in set (0.00 sec)
+
+mysql> update ngoma set id=6,f_name='uwera',l_name='jojo' where district='musanze';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from Ngoma;
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender  | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female  | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female  | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female  | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female  | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | northen | musanze  | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
+|    6 | uwera     | jojo    | female  | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com |
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+6 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('007','abimana', 'evode',
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> update Ngoma set gender = 'female' where l_name = 'violete';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update Ngoma set province = 'west' where l_name = 'violete';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from Ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+6 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('007','munyaneza', 'evode','male', 'east','rwamagana','gahengeri','ruhita','0799999999','munyanezaevode@gmail.com',);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> insert into Ngoma values('007','munyaneza', 'evode','male', 'east','rwamagana','gahengeri','ruhita','0799999999','munyanezaevode@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com |
+|    7 | munyaneza | evode   | male   | east     | rwamagana  | gahengeri | ruhita   | 799999999 | munyanezaevode@gmail.com  |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+7 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('008','mugisha','bernard','male','east','kayonza','kanyinya','rurabo','0781024342','mugishabernard@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com |
+|    7 | munyaneza | evode   | male   | east     | rwamagana  | gahengeri | ruhita   | 799999999 | munyanezaevode@gmail.com  |
+|    8 | mugisha   | bernard | male   | east     | kayonza    | kanyinya  | rurabo   | 781024342 | mugishabernard@gmail.com  |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+8 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('009','muvunyi','carine','female','sourthen','muhanga','byimana','muhororo','0788888888','muvunyicarine@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com |
+|    7 | munyaneza | evode   | male   | east     | rwamagana  | gahengeri | ruhita   | 799999999 | munyanezaevode@gmail.com  |
+|    8 | mugisha   | bernard | male   | east     | kayonza    | kanyinya  | rurabo   | 781024342 | mugishabernard@gmail.com  |
+|    9 | muvunyi   | carine  | female | sourthen | muhanga    | byimana   | muhororo | 788888888 | muvunyicarine@gmail.com   |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+9 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('0010','musoni','norbert','male','west','ruhango','gatare','buhoro','0784989678','musoninorbert@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com |
+|    7 | munyaneza | evode   | male   | east     | rwamagana  | gahengeri | ruhita   | 799999999 | munyanezaevode@gmail.com  |
+|    8 | mugisha   | bernard | male   | east     | kayonza    | kanyinya  | rurabo   | 781024342 | mugishabernard@gmail.com  |
+|    9 | muvunyi   | carine  | female | sourthen | muhanga    | byimana   | muhororo | 788888888 | muvunyicarine@gmail.com   |
+|   10 | musoni    | norbert | male   | west     | ruhango    | gatare    | buhoro   | 784989678 | musoninorbert@gmail.com   |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+10 rows in set (0.00 sec)
+
+mysql> alter table Ngoma add nationality char(20);
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> show tables;
++-------------------+
+| Tables_in_ruhande |
++-------------------+
+| ngoma             |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select *from ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+-------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     | nationality |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+-------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     | NULL        |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     | NULL        |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com | NULL        |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com | NULL        |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com | NULL        |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com | NULL        |
+|    7 | munyaneza | evode   | male   | east     | rwamagana  | gahengeri | ruhita   | 799999999 | munyanezaevode@gmail.com  | NULL        |
+|    8 | mugisha   | bernard | male   | east     | kayonza    | kanyinya  | rurabo   | 781024342 | mugishabernard@gmail.com  | NULL        |
+|    9 | muvunyi   | carine  | female | sourthen | muhanga    | byimana   | muhororo | 788888888 | muvunyicarine@gmail.com   | NULL        |
+|   10 | musoni    | norbert | male   | west     | ruhango    | gatare    | buhoro   | 784989678 | musoninorbert@gmail.com   | NULL        |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> update ngoma set nationality ='Rwandan' where id='001';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality ='Rwandan' where id='002';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality ='Rwandan' where id='003';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality='Rwandan' where id='004';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality='Rwandan' where id='005';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality='Rwandan' where id='006';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality='Rwandan' where id='007';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality='Rwandan' where id='008';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality='Rwandan' where id='009';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 1676
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use ruhande;
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_ruhande |
++-------------------+
+| ngoma             |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from ngoma;
++------+---------+--------+--------+----------+----------+-----------+---------+-----------+-----------------------+
+| ID   | f_name  | l_name | gender | province | district | sector    | cell    | tel       | gmail                 |
++------+---------+--------+--------+----------+----------+-----------+---------+-----------+-----------------------+
+|    1 | uwimana | Aline  | female | west     | karongi  | Rubengera | Kamwiza | 782335468 | uwimanaline@gmail.com |
++------+---------+--------+--------+----------+----------+-----------+---------+-----------+-----------------------+
+1 row in set (0.00 sec)
+
+mysql> insert into Ngoma values('002','abizera','anita', 'female','west','rubavu','mwiza','rwera','0781783009','abizeranita@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+---------+--------+--------+----------+----------+-----------+---------+-----------+-----------------------+
+| ID   | f_name  | l_name | gender | province | district | sector    | cell    | tel       | gmail                 |
++------+---------+--------+--------+----------+----------+-----------+---------+-----------+-----------------------+
+|    1 | uwimana | Aline  | female | west     | karongi  | Rubengera | Kamwiza | 782335468 | uwimanaline@gmail.com |
+|    2 | abizera | anita  | female | west     | rubavu   | mwiza     | rwera   | 781783009 | abizeranita@gmail.com |
++------+---------+--------+--------+----------+----------+-----------+---------+-----------+-----------------------+
+2 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('003','niyigena','djamila','female','kigali','gasabo','ntora','musezero','0781683006','niyigenadjamila@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+----------+---------+--------+----------+----------+-----------+----------+-----------+---------------------------+
+| ID   | f_name   | l_name  | gender | province | district | sector    | cell     | tel       | gmail                     |
++------+----------+---------+--------+----------+----------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana  | Aline   | female | west     | karongi  | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera  | anita   | female | west     | rubavu   | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena | djamila | female | kigali   | gasabo   | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
++------+----------+---------+--------+----------+----------+-----------+----------+-----------+---------------------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('004','uwiragiye','female','sumaya','kigali','nyarugenge','musezero','rugari','0789999999','uwiragiyesumaya@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | female  | sumaya | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+4 rows in set (0.00 sec)
+
+mysql> update Ngoma set l_name='sumaya'where f_name='uwiragiye';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update Ngoma set gender='female' where l_name='sumaya';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from Ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('005','makombe','violete','northen','musanze','muhoza','gabiro','munini','0798929394','makombeviolette@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender  | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female  | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female  | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female  | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female  | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | northen | musanze  | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+5 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('005','makombe','violete','female','northen','musanze','muhoza','gabiro','0798929394','makombeviolette@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender  | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female  | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female  | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female  | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female  | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | northen | musanze  | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
+|    5 | makombe   | violete | female  | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com |
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+6 rows in set (0.00 sec)
+
+mysql> update ngoma set id=6,f_name='uwera',l_name='jojo' where district='musanze';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from Ngoma;
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender  | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female  | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female  | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female  | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female  | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | northen | musanze  | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
+|    6 | uwera     | jojo    | female  | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com |
++------+-----------+---------+---------+----------+------------+-----------+----------+-----------+---------------------------+
+6 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('007','abimana', 'evode',
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> update Ngoma set gender = 'female' where l_name = 'violete';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update Ngoma set province = 'west' where l_name = 'violete';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from Ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+6 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('007','munyaneza', 'evode','male', 'east','rwamagana','gahengeri','ruhita','0799999999','munyanezaevode@gmail.com',);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> insert into Ngoma values('007','munyaneza', 'evode','male', 'east','rwamagana','gahengeri','ruhita','0799999999','munyanezaevode@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com |
+|    7 | munyaneza | evode   | male   | east     | rwamagana  | gahengeri | ruhita   | 799999999 | munyanezaevode@gmail.com  |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+7 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('008','mugisha','bernard','male','east','kayonza','kanyinya','rurabo','0781024342','mugishabernard@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com |
+|    7 | munyaneza | evode   | male   | east     | rwamagana  | gahengeri | ruhita   | 799999999 | munyanezaevode@gmail.com  |
+|    8 | mugisha   | bernard | male   | east     | kayonza    | kanyinya  | rurabo   | 781024342 | mugishabernard@gmail.com  |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+8 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('009','muvunyi','carine','female','sourthen','muhanga','byimana','muhororo','0788888888','muvunyicarine@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com |
+|    7 | munyaneza | evode   | male   | east     | rwamagana  | gahengeri | ruhita   | 799999999 | munyanezaevode@gmail.com  |
+|    8 | mugisha   | bernard | male   | east     | kayonza    | kanyinya  | rurabo   | 781024342 | mugishabernard@gmail.com  |
+|    9 | muvunyi   | carine  | female | sourthen | muhanga    | byimana   | muhororo | 788888888 | muvunyicarine@gmail.com   |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+9 rows in set (0.00 sec)
+
+mysql> insert into Ngoma values('0010','musoni','norbert','male','west','ruhango','gatare','buhoro','0784989678','musoninorbert@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from Ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com |
+|    7 | munyaneza | evode   | male   | east     | rwamagana  | gahengeri | ruhita   | 799999999 | munyanezaevode@gmail.com  |
+|    8 | mugisha   | bernard | male   | east     | kayonza    | kanyinya  | rurabo   | 781024342 | mugishabernard@gmail.com  |
+|    9 | muvunyi   | carine  | female | sourthen | muhanga    | byimana   | muhororo | 788888888 | muvunyicarine@gmail.com   |
+|   10 | musoni    | norbert | male   | west     | ruhango    | gatare    | buhoro   | 784989678 | musoninorbert@gmail.com   |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+
+10 rows in set (0.00 sec)
+
+mysql> alter table Ngoma add nationality char(20);
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> show tables;
++-------------------+
+| Tables_in_ruhande |
++-------------------+
+| ngoma             |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select *from ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+-------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     | nationality |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+-------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     | NULL        |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     | NULL        |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com | NULL        |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com | NULL        |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com | NULL        |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com | NULL        |
+|    7 | munyaneza | evode   | male   | east     | rwamagana  | gahengeri | ruhita   | 799999999 | munyanezaevode@gmail.com  | NULL        |
+|    8 | mugisha   | bernard | male   | east     | kayonza    | kanyinya  | rurabo   | 781024342 | mugishabernard@gmail.com  | NULL        |
+|    9 | muvunyi   | carine  | female | sourthen | muhanga    | byimana   | muhororo | 788888888 | muvunyicarine@gmail.com   | NULL        |
+|   10 | musoni    | norbert | male   | west     | ruhango    | gatare    | buhoro   | 784989678 | musoninorbert@gmail.com   | NULL        |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> update ngoma set nationality ='Rwandan' where id='001';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality ='Rwandan' where id='002';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality ='Rwandan' where id='003';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality='Rwandan' where id='004';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality='Rwandan' where id='005';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality='Rwandan' where id='006';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality='Rwandan' where id='007';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality='Rwandan' where id='008';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality='Rwandan' where id='009';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set nationality='Rwandan' where id='0010''
+    
+
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 1685
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use Ruhande;
+Database changed
+mysql> select *from ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+-------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     | nationality |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+-------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     | Rwandan     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     | Rwandan     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com | Rwandan     |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com | Rwandan     |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com | Rwandan     |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com | Rwandan     |
+|    7 | munyaneza | evode   | male   | east     | rwamagana  | gahengeri | ruhita   | 799999999 | munyanezaevode@gmail.com  | Rwandan     |
+|    8 | mugisha   | bernard | male   | east     | kayonza    | kanyinya  | rurabo   | 781024342 | mugishabernard@gmail.com  | Rwandan     |
+|    9 | muvunyi   | carine  | female | sourthen | muhanga    | byimana   | muhororo | 788888888 | muvunyicarine@gmail.com   | Rwandan     |
+|   10 | musoni    | norbert | male   | west     | ruhango    | gatare    | buhoro   | 784989678 | musoninorbert@gmail.com   | NULL        |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> update ngoma set nationality='Rwandan' where id='10';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+-------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | tel       | gmail                     | nationality |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+-------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | 782335468 | uwimanaline@gmail.com     | Rwandan     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | 781783009 | abizeranita@gmail.com     | Rwandan     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | 781683006 | niyigenadjamila@gmail.com | Rwandan     |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | 789999999 | uwiragiyesumaya@gmail.com | Rwandan     |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | 798929394 | makombeviolette@gmail.com | Rwandan     |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | 798929394 | makombeviolette@gmail.com | Rwandan     |
+|    7 | munyaneza | evode   | male   | east     | rwamagana  | gahengeri | ruhita   | 799999999 | munyanezaevode@gmail.com  | Rwandan     |
+|    8 | mugisha   | bernard | male   | east     | kayonza    | kanyinya  | rurabo   | 781024342 | mugishabernard@gmail.com  | Rwandan     |
+|    9 | muvunyi   | carine  | female | sourthen | muhanga    | byimana   | muhororo | 788888888 | muvunyicarine@gmail.com   | Rwandan     |
+|   10 | musoni    | norbert | male   | west     | ruhango    | gatare    | buhoro   | 784989678 | musoninorbert@gmail.com   | Rwandan     |
++------+-----------+---------+--------+----------+------------+-----------+----------+-----------+---------------------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> alter table ngoma drop tel;
+Query OK, 10 rows affected (0.04 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select *from ngoma;
++------+-----------+---------+--------+----------+------------+-----------+----------+---------------------------+-------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | gmail                     | nationality |
++------+-----------+---------+--------+----------+------------+-----------+----------+---------------------------+-------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | uwimanaline@gmail.com     | Rwandan     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | abizeranita@gmail.com     | Rwandan     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | niyigenadjamila@gmail.com | Rwandan     |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | uwiragiyesumaya@gmail.com | Rwandan     |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | makombeviolette@gmail.com | Rwandan     |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | makombeviolette@gmail.com | Rwandan     |
+|    7 | munyaneza | evode   | male   | east     | rwamagana  | gahengeri | ruhita   | munyanezaevode@gmail.com  | Rwandan     |
+|    8 | mugisha   | bernard | male   | east     | kayonza    | kanyinya  | rurabo   | mugishabernard@gmail.com  | Rwandan     |
+|    9 | muvunyi   | carine  | female | sourthen | muhanga    | byimana   | muhororo | muvunyicarine@gmail.com   | Rwandan     |
+|   10 | musoni    | norbert | male   | west     | ruhango    | gatare    | buhoro   | musoninorbert@gmail.com   | Rwandan     |
++------+-----------+---------+--------+----------+------------+-----------+----------+---------------------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> select  f_name, district, nationality, gender, province from ngoma;
++-----------+------------+-------------+--------+----------+
+| f_name    | district   | nationality | gender | province |
++-----------+------------+-------------+--------+----------+
+| uwimana   | karongi    | Rwandan     | female | west     |
+| abizera   | rubavu     | Rwandan     | female | west     |
+| niyigena  | gasabo     | Rwandan     | female | kigali   |
+| uwiragiye | nyarugenge | Rwandan     | female | kigali   |
+| makombe   | muhoza     | Rwandan     | female | west     |
+| uwera     | musanze    | Rwandan     | female | northen  |
+| munyaneza | rwamagana  | Rwandan     | male   | east     |
+| mugisha   | kayonza    | Rwandan     | male   | east     |
+| muvunyi   | muhanga    | Rwandan     | female | sourthen |
+| musoni    | ruhango    | Rwandan     | male   | west     |
++-----------+------------+-------------+--------+----------+
+10 rows in set (0.00 sec)
+
+mysql> select* from ngoma where province='west' or nationality='Rwandan';
++------+-----------+---------+--------+----------+------------+-----------+----------+---------------------------+-------------+
+| ID   | f_name    | l_name  | gender | province | district   | sector    | cell     | gmail                     | nationality |
++------+-----------+---------+--------+----------+------------+-----------+----------+---------------------------+-------------+
+|    1 | uwimana   | Aline   | female | west     | karongi    | Rubengera | Kamwiza  | uwimanaline@gmail.com     | Rwandan     |
+|    2 | abizera   | anita   | female | west     | rubavu     | mwiza     | rwera    | abizeranita@gmail.com     | Rwandan     |
+|    3 | niyigena  | djamila | female | kigali   | gasabo     | ntora     | musezero | niyigenadjamila@gmail.com | Rwandan     |
+|    4 | uwiragiye | sumaya  | female | kigali   | nyarugenge | musezero  | rugari   | uwiragiyesumaya@gmail.com | Rwandan     |
+|    5 | makombe   | violete | female | west     | muhoza     | gabiro    | munini   | makombeviolette@gmail.com | Rwandan     |
+|    6 | uwera     | jojo    | female | northen  | musanze    | muhoza    | gabiro   | makombeviolette@gmail.com | Rwandan     |
+|    7 | munyaneza | evode   | male   | east     | rwamagana  | gahengeri | ruhita   | munyanezaevode@gmail.com  | Rwandan     |
+|    8 | mugisha   | bernard | male   | east     | kayonza    | kanyinya  | rurabo   | mugishabernard@gmail.com  | Rwandan     |
+|    9 | muvunyi   | carine  | female | sourthen | muhanga    | byimana   | muhororo | muvunyicarine@gmail.com   | Rwandan     |
+|   10 | musoni    | norbert | male   | west     | ruhango    | gatare    | buhoro   | musoninorbert@gmail.com   | Rwandan     |
++------+-----------+---------+--------+----------+------------+-----------+----------+---------------------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> select* from ngoma where province='west' AND nationality='Rwandan';
++------+---------+---------+--------+----------+----------+-----------+---------+---------------------------+-------------+
+| ID   | f_name  | l_name  | gender | province | district | sector    | cell    | gmail                     | nationality |
++------+---------+---------+--------+----------+----------+-----------+---------+---------------------------+-------------+
+|    1 | uwimana | Aline   | female | west     | karongi  | Rubengera | Kamwiza | uwimanaline@gmail.com     | Rwandan     |
+|    2 | abizera | anita   | female | west     | rubavu   | mwiza     | rwera   | abizeranita@gmail.com     | Rwandan     |
+|    5 | makombe | violete | female | west     | muhoza   | gabiro    | munini  | makombeviolette@gmail.com | Rwandan     |
+|   10 | musoni  | norbert | male   | west     | ruhango  | gatare    | buhoro  | musoninorbert@gmail.com   | Rwandan     |
++------+---------+---------+--------+----------+----------+-----------+---------+---------------------------+-------------+
+4 rows in set (0.00 sec)
+
+mysql>
+
